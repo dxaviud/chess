@@ -1,7 +1,6 @@
 
 /*
- * Copyright © 2020 David Xu All rights reserved. Use only for non-commercial purposes. Authorization required for other purposes. Use at your own risk.
- * This class is part of a chess game made for the AP Computer Science A's final project at University High School, Irvine CA. 
+ * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
  */
 
 import java.awt.Dimension;
@@ -26,7 +25,7 @@ import javax.swing.Timer;
 
 
 public class ChessGame {
-	//instance variables
+
 	private ChessPiece[][] chessBoard;
 	private String playerTurn;
 	public final static String WHITE = "white";
@@ -68,10 +67,6 @@ public class ChessGame {
 	private final String THREE_MIN_BULLET = "three minute bullet";
 	private final String ONE_MIN_BULLET = "one minute bullet";
 
-	
-	/**
-	 * Constructor for a chess game
-	 */
 	public ChessGame() { 
 		
 		gameType = NO_TIME_LIMIT;
@@ -94,7 +89,7 @@ public class ChessGame {
 		blackTimer = new Timer(1000, new BlackTimerListener());
 		
 
-		titleScreenImage = new ImageIcon("src\\chessBackgroundImage.jpg").getImage();
+		titleScreenImage = new ImageIcon(System.getProperty("user.dir")+"\\images\\chessBackgroundImage.jpg").getImage();
 		showTitleScreen = true;
 		animationSpeed = MEDIUM_ANIMATION;
 		animating = false;
@@ -138,8 +133,6 @@ public class ChessGame {
 			}
 		}
 		
-		
-		
 		frame = new JFrame("My Chess Game");
 		canvas = new Canvas(WIDTH, HEIGHT, this);
 		canvas.setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -172,7 +165,7 @@ public class ChessGame {
 				
 		class CopyrightsMenuItemListener implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
-				MessageBox.infoBox("Copyright © 2020 David Xu All rights reserved. Use only for non-commercial purposes. Authorization required for other purposes. Use at your own risk.", "Copyrights");
+				MessageBox.infoBox("Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.", "Copyrights");
 			}
 		}
 
@@ -504,7 +497,6 @@ public class ChessGame {
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
 				ChessPiece clickedPiece = canvas.getClickedPiece(e.getX(), e.getY());
-
 				if (!(clickedPiece == null) && clickedPiece.getColor().equals(playerTurn)) {
 					selectedPiece = clickedPiece;
 					selectedPosition = null;
@@ -555,9 +547,6 @@ public class ChessGame {
 
 	}
 	
-	/**
-	 * This method resets the chess board.
-	 */
 	public void reset() {
 		chessBoard = new ChessPiece[8][8];
 		
@@ -619,24 +608,20 @@ public class ChessGame {
 		canvas.refresh();
 	}
 	
-	
-	/**
-	 * This method runs the game using a loop
-	 */
 	public void runGame() {
 		
 		boolean validPick;
-		
+		System.out.println("runGame");
 		while(true) {
 			
 			validPick = false;
 			while (!validPick) {
+				System.out.println(selectedPiece); //why tf do I need to print for the program to work?????????????????
 				if(selectedPiece != null && selectedPiece.getColor().equals(playerTurn)) {
 					validPick = true;
 					canvas.refresh();
 				}
 			}
-			
 			while (!validMove()) {
 			}
 			
@@ -671,11 +656,7 @@ public class ChessGame {
 			}
 		}
 	}
-	
-	/**
-	 * This method pauses the game for some time
-	 * @param miliseconds the number of milliseconds to pause
-	 */
+
 	private void pause(int miliseconds) {
         try {
             Thread.sleep(miliseconds);
@@ -708,7 +689,6 @@ public class ChessGame {
 	private void move(ChessPiece from, ChessPiece to) {
 		
 		animateMove(from, to);
-		
 		
 		whiteTimer.stop();
 		blackTimer.stop();
@@ -775,10 +755,7 @@ public class ChessGame {
 		chessBoard[to.getRowIndex()][to.getColIndex()].setRowIndex(row);
 		chessBoard[to.getRowIndex()][to.getColIndex()].setColIndex(col);
 	}
-	
-	/**
-	 * Undoes the last move
-	 */
+
 	private void undoMove() {
 		if (pastMoves.isEmpty()) {
 			return;
@@ -802,7 +779,6 @@ public class ChessGame {
 		gameOver = false;
 		canvas.refresh();
 	}
-
 
 	/**
 	 * Animates the movement of a chess piece
@@ -873,9 +849,6 @@ public class ChessGame {
 		chessBoard[fromRow][fromCol] = from;
 	}
 
-
-
-
 	/**
 	 * Checks to see if the game is over
 	 * @return True if the game is over, false if not
@@ -942,9 +915,6 @@ public class ChessGame {
 		}
 		return true;
 	}
-	
-
-	
 	
 	public ChessPiece[][] getBoard() {
 		return chessBoard;

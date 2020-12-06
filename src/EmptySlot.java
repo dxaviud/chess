@@ -1,6 +1,5 @@
 /*
- * Copyright © 2020 David Xu All rights reserved. Use only for non-commercial purposes. Authorization required for other purposes. Use at your own risk.
- * This class is part of a chess game made for the AP Computer Science A's final project at University High School, Irvine CA. 
+ * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
  */
 import java.util.ArrayList;
 
@@ -16,7 +15,7 @@ public class EmptySlot extends ChessPiece {
 	}
 	
 	private Image getCorrectTile() {
-		return new ImageIcon("src\\"+getBlackOrWhiteTile().toLowerCase()+"Tile.png").getImage();
+		return new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getBlackOrWhiteTile().toLowerCase()+"Tile.png").getImage();
 	}
 	
 	public ArrayList<ChessPiece> getPossibleMoves(ChessPiece[][] board) {

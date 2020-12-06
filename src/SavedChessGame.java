@@ -1,4 +1,7 @@
-
+/*
+ * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
+ */
+ 
 import java.io.FileReader;
 import java.util.ArrayList;
 

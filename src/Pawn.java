@@ -1,6 +1,5 @@
 /*
- * Copyright © 2020 David Xu All rights reserved. Use only for non-commercial purposes. Authorization required for other purposes. Use at your own risk.
- * This class is part of a chess game made for the AP Computer Science A's final project at University High School, Irvine CA. 
+ * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
  */
 import java.util.ArrayList;
 
@@ -22,7 +21,7 @@ public class Pawn extends ChessPiece {
 		super(color, row, col);
 		firstMove = true;
 		enPassantable = false;
-		super.setTransparentImage(new ImageIcon("src\\"+getColor()+"Pawn.png").getImage());
+		super.setTransparentImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getColor()+"Pawn.png").getImage());
 
 	}
 	
@@ -236,7 +235,7 @@ public class Pawn extends ChessPiece {
 	}
 
 	public Image getImage() {
-		return new ImageIcon("src\\"+getColor()+"Pawn"+getBlackOrWhiteTile()+"Tile.png").getImage();
+		return new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getColor()+"Pawn"+getBlackOrWhiteTile()+"Tile.png").getImage();
 	}
 	
 	public void setTransparentImage(Image i) {
