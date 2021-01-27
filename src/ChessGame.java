@@ -165,7 +165,7 @@ public class ChessGame {
 				
 		class CopyrightsMenuItemListener implements ActionListener {
 			public void actionPerformed(ActionEvent e) {
-				MessageBox.infoBox("Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.", "Copyrights");
+				MessageBox.infoBox("Copyright 2021 David Xu. Commercial use prohibited.", "Copyrights");
 			}
 		}
 
