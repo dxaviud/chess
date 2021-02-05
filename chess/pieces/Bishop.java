@@ -1,6 +1,9 @@
 /*
  * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
  */
+
+package chess.pieces;
+
 import java.util.ArrayList;
 
 import java.awt.Image;
@@ -10,7 +13,7 @@ public class Bishop extends ChessPiece {
 
 	public Bishop(String color, int row, int col) {
 		super(color, row, col);
-		super.setTransparentImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getColor()+"Bishop.png").getImage());
+		super.setTransparentImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\"+getColor()+"Bishop.png").getImage());
 	}
 	
 	public ArrayList<ChessPiece> getPossibleMoves(ChessPiece[][] board) {
@@ -243,7 +246,7 @@ public class Bishop extends ChessPiece {
 	}
 	
 	public Image getImage() {
-		return new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getColor()+"Bishop"+getBlackOrWhiteTile()+"Tile.png").getImage();
+		return new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\"+getColor()+"Bishop"+getBlackOrWhiteTile()+"Tile.png").getImage();
 	}
 	
 	public void setTransparentImage(Image i) {

@@ -2,6 +2,8 @@
  * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
  */
  
+package chess.pieces;
+
 import java.util.ArrayList;
 
 import java.awt.Image;
@@ -14,7 +16,7 @@ public class Rook extends ChessPiece {
 	public Rook(String color, int row, int col) {
 		super(color, row, col);
 		hasMoved = false;
-		super.setTransparentImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getColor()+"Rook.png").getImage());
+		super.setTransparentImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\"+getColor()+"Rook.png").getImage());
 	}
 	
 	public ArrayList<ChessPiece> getPossibleMoves(ChessPiece[][] board) {
@@ -237,7 +239,7 @@ public class Rook extends ChessPiece {
 	}
 
 	public Image getImage() {
-		return new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getColor()+"Rook"+getBlackOrWhiteTile()+"Tile.png").getImage();
+		return new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\"+getColor()+"Rook"+getBlackOrWhiteTile()+"Tile.png").getImage();
 	}
 	
 	public void setTransparentImage(Image i) {

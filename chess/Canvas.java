@@ -2,6 +2,10 @@
  * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
  */
 
+package chess;
+
+import chess.pieces.ChessPiece;
+
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -35,13 +39,13 @@ public class Canvas extends JComponent{
 					for (ChessPiece col : row) {
 						g.drawImage(col.getImage(), col.getColIndex()*80, col.getRowIndex()*80, this);
 						if (game.getSelectedPiece() != null && game.getSelectedPiece().equals(col)) {
-							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\selectedPiece.png").getImage(), col.getColIndex()*80, col.getRowIndex()*80, this);
+							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\selectedPiece.png").getImage(), col.getColIndex()*80, col.getRowIndex()*80, this);
 						}
 						if (game.getSelectedPiece() != null && isPossibleMove(col, game.getSelectedPiece().getPossibleMoves(game.getBoard()))) {
-							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\possibleMove.png").getImage(), col.getColIndex()*80, col.getRowIndex()*80, this);
+							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\possibleMove.png").getImage(), col.getColIndex()*80, col.getRowIndex()*80, this);
 						}
 						if (game.getLastMovedPiece() != null && game.getLastMovedPiece().equals(col)) {
-							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\lastMoved.png").getImage(), col.getColIndex()*80, col.getRowIndex()*80, this);
+							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\lastMoved.png").getImage(), col.getColIndex()*80, col.getRowIndex()*80, this);
 						}
 					}
 				}
@@ -50,13 +54,13 @@ public class Canvas extends JComponent{
 					for (int col = 7; col > -1; col--) {
 						g.drawImage(game.getBoard()[row][col].getImage(), (7-col)*80, (7-row)*80, this);
 						if (game.getSelectedPiece() != null && game.getSelectedPiece().equals(game.getBoard()[row][col])) {
-							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\selectedPiece.png").getImage(), (7-col)*80, (7-row)*80, this);
+							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\selectedPiece.png").getImage(), (7-col)*80, (7-row)*80, this);
 						}
 						if (game.getSelectedPiece() != null && isPossibleMove(game.getBoard()[row][col], game.getSelectedPiece().getPossibleMoves(game.getBoard()))) {
-							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\possibleMove.png").getImage(), (7-col)*80, (7-row)*80, this);
+							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\possibleMove.png").getImage(), (7-col)*80, (7-row)*80, this);
 						}
 						if (game.getLastMovedPiece() != null && game.getLastMovedPiece().equals(game.getBoard()[row][col])) {
-							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\lastMoved.png").getImage(), (7-col)*80, (7-row)*80, this);
+							g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\lastMoved.png").getImage(), (7-col)*80, (7-row)*80, this);
 						}
 					}
 				}
@@ -65,11 +69,11 @@ public class Canvas extends JComponent{
 				g.drawImage(game.getAnimatedPiece().getTransparentImage(), game.getAnimatedPieceCol(), game.getAnimedPieceRow(), this);
 			} else if (game.getGameOver()) {
 				if (game.getWinner().equals(ChessGame.WHITE)) {
-					g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\gameOverWhiteWin.png").getImage(), 80, 160, this);
+					g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\gameOverWhiteWin.png").getImage(), 80, 160, this);
 				} else if (game.getWinner().equals(ChessGame.BLACK)){
-					g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\gameOverBlackWin.png").getImage(), 80, 160, this);
+					g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\gameOverBlackWin.png").getImage(), 80, 160, this);
 				} else {
-					g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\stalemate.png").getImage(), 80, 160, this);
+					g.drawImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\stalemate.png").getImage(), 80, 160, this);
 				}
 			}
 		}

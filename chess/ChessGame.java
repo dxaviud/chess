@@ -3,6 +3,10 @@
  * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
  */
 
+package chess;
+
+import chess.pieces.*;
+
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -88,8 +92,7 @@ public class ChessGame {
 		}
 		blackTimer = new Timer(1000, new BlackTimerListener());
 		
-
-		titleScreenImage = new ImageIcon(System.getProperty("user.dir")+"\\images\\chessBackgroundImage.jpg").getImage();
+		titleScreenImage = new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\chessBackgroundImage.jpg").getImage();
 		showTitleScreen = true;
 		animationSpeed = MEDIUM_ANIMATION;
 		animating = false;
@@ -616,7 +619,7 @@ public class ChessGame {
 			
 			validPick = false;
 			while (!validPick) {
-				System.out.println(selectedPiece); //why tf do I need to print for the program to work?????????????????
+				System.out.println(selectedPiece);
 				if(selectedPiece != null && selectedPiece.getColor().equals(playerTurn)) {
 					validPick = true;
 					canvas.refresh();

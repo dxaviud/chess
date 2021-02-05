@@ -1,6 +1,11 @@
 /*
  * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
  */
+
+package chess.pieces;
+
+import chess.ChessGame;
+
 import java.util.ArrayList;
 
 import java.awt.Image;
@@ -21,7 +26,7 @@ public class Pawn extends ChessPiece {
 		super(color, row, col);
 		firstMove = true;
 		enPassantable = false;
-		super.setTransparentImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getColor()+"Pawn.png").getImage());
+		super.setTransparentImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\"+getColor()+"Pawn.png").getImage());
 
 	}
 	
@@ -235,7 +240,7 @@ public class Pawn extends ChessPiece {
 	}
 
 	public Image getImage() {
-		return new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getColor()+"Pawn"+getBlackOrWhiteTile()+"Tile.png").getImage();
+		return new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\"+getColor()+"Pawn"+getBlackOrWhiteTile()+"Tile.png").getImage();
 	}
 	
 	public void setTransparentImage(Image i) {

@@ -1,6 +1,10 @@
 /*
  * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
  */
+
+package chess;
+
+import chess.pieces.*;
  
 import java.io.FileReader;
 import java.util.ArrayList;

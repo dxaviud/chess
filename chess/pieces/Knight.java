@@ -1,6 +1,8 @@
 /*
  * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
  */
+
+package chess.pieces;
  
 import java.util.ArrayList;
 
@@ -11,7 +13,7 @@ public class Knight extends ChessPiece {
 
 	public Knight(String color, int row, int col) {
 		super(color, row, col);
-		super.setTransparentImage(new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getColor()+"Knight.png").getImage());
+		super.setTransparentImage(new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\"+getColor()+"Knight.png").getImage());
 	}
 	
 	public ArrayList<ChessPiece> getPossibleMoves(ChessPiece[][] board) {
@@ -224,7 +226,7 @@ public class Knight extends ChessPiece {
 	}
 	
 	public Image getImage() {
-		return new ImageIcon(System.getProperty("user.dir")+"\\images\\"+getColor()+"Knight"+getBlackOrWhiteTile()+"Tile.png").getImage();
+		return new ImageIcon(System.getProperty("user.dir")+"\\chess\\images\\"+getColor()+"Knight"+getBlackOrWhiteTile()+"Tile.png").getImage();
 	}
 	
 	public void setTransparentImage(Image i) {
