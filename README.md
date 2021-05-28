@@ -1,7 +1,7 @@
 # chess
 
 ## About
-This is my implementation of Chess using Java. I used Java's Swing API to create the GUI.  
+My implementation of Chess using Java. I used Java's Swing API to create the GUI.  
 
 ![chess](https://dxaviud.github.io/images/chess.gif)
 
