@@ -1,8 +1,4 @@
-/*
- * Copyright 2020 David Xu All rights reserved. Use for commercial purposes is prohibited.
- */
-
-package chess.pieces;
+package src.pieces;
 
 import java.util.ArrayList;
 import java.awt.Image;
