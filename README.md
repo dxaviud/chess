@@ -6,5 +6,5 @@
 
 ## Execute
 `javac src/Main.java`  
-then `java src/Main`
+`java src/Main`
 
